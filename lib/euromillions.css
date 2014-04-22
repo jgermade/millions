@@ -1,0 +1,114 @@
+
+#cards {
+    border: 1px solid #2954B7;
+    box-shadow: inset 0 0 1rem rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+/* each card in euromillions */
+    #cards .card {
+        font-size: 0.8rem;
+        display: inline-block;
+        width: 18%;
+        padding: 1rem 1%;
+        
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+    	-moz-user-select: none;
+    	-o-user-select: none;
+    	user-select: none;
+    }
+
+
+/* responsive desing css queries*/
+    @media screen and (max-width: 11in) { #cards .card { width: 30%; } }
+    @media screen and (max-width: 9in) { #cards .card { width: 50%; max-width: 3in; } }
+    @media screen and (max-width: 7in) { #cards .card { width: 100%; max-width: 3in; } }
+
+
+/* reseting table defaults */
+    #cards table, #cards tr, #cards td, #cards th { margin: 0; padding: 0; border-collapse: collapse; }
+    
+    #cards .card table {
+        width: 100%; text-align: center;
+    }
+
+/* height for each row in cards */
+    #cards td { height: 1.8rem; }
+
+/* width for 5 nums in each row */
+    #cards .nums td { width: 16.7%; }
+    
+/* width for 4 stars in each row */
+    #cards .stars td { width: 20%; }
+
+
+/* to enhance cards visually */
+    #cards .card>.wrapper {
+        box-shadow: 0 0 0.4rem rgba(0,0,0,0.4);
+    }
+
+
+/* background of each card and border */
+    #cards .card .nums {
+        border: 1px solid #DA5753;
+    }
+    
+    #cards .card .stars {
+        background: #FFD94B;
+        border: 1px solid #DA5753;
+        border-top: 0;
+    }
+    
+    /* breathing and sizing */
+    #cards .card .nums>.body>.row:first-child>td { padding-top: 0.4rem; }
+    #cards .card .nums>.body>.row:last-child>td { padding-bottom: 0.4rem; }
+
+    #cards .card .stars .star { height: 2rem; }
+
+/* number of each card in the top left corner */
+    #cards .card .nums .card-num {
+        background-color: #DA5753; color: white;
+    }
+
+/* auto-fill / clear button style */
+    #cards .card .nums .auto-fill {
+        background-color: transparent; cursor: pointer;
+        border: 1px solid #1E7709;
+    }
+    #cards .card .nums .auto-fill:hover {
+        background-color: #1E7709; color: white;
+    }
+    #cards .card .nums .auto-fill:active {
+        background-color: #2BAF0D; color: white;
+    }
+
+/* hiding auto-fill and showing clear if card is filled */
+    #cards .card .nums .auto-fill>.clear { display: none; }
+    #cards .card.filled .nums .auto-fill>.clear { display: inherit; }
+    #cards .card.filled .nums .auto-fill>.fill { display: none; }
+
+/* each number or star in card */
+    #cards .card .nums>.body .value, #cards .card .stars .star .value {
+        display: inline-block; width: 90%; max-width: 1.3rem; height: 1.3rem;
+        padding: 0; margin: 0; padding-top: 0.1rem;
+        background-color: white; color: #DA5753;
+        border: 1px solid #DA5753;
+        cursor: pointer;
+    }
+/* to enhance visual effect and fix ios behavior */
+    #cards .card .nums>.body .num, #cards .card .stars .star { cursor: pointer; }
+
+/* style with mouse over a number or star */
+    #cards .card .nums>.body .num:hover>.value, #cards .card .stars .star:hover>.value {
+        background-color: #DA5753; color: white;
+    }
+    
+    #cards .card .nums>.body .num:active>.value, #cards .card .stars .star:active>.value {
+        background-color: firebrick;
+    }
+
+/* style when a number or star is selected */
+    #cards .card .nums>.body .num.active>.value, #cards .card .stars .star.active>.value {
+        background-color: #444; color: white;
+    }

@@ -1,0 +1,16 @@
+#welcome {
+    padding: 1rem 0;
+    margin-bottom: 5rem;
+}
+
+#welcome li { margin-bottom: 0.5rem; }
+
+code { background: #eee; padding: 0 0.5rem; }
+
+code.inline-block { display: inline-block; padding: 0.5rem; }
+code.block { display: block; padding: 0.5rem; }
+
+#welcome a { color: blue; text-decoration: none; }
+#welcome a:hover { text-decoration: underline; }
+
+#files-list>ul>li { margin-bottom: 2rem; }

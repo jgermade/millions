@@ -1,0 +1,85 @@
+
+/* nums/stars in each item */
+    .shop-items .item .nums, .shop-items .item .num, .shop-items .item .stars, .shop-items .item .star {
+        display: inline-block;
+    }
+
+/* each item in shopping cart */
+    .shop-items .item {
+        border-bottom: 1px solid #bbb;
+        -webkit-transition: all 0.25s;
+        -moz-transition: all 0.25s;
+        -ms-transition: all 0.25s;
+        -o-transition: all 0.25s;
+        transition: all 0.25s;
+    }
+
+/* nums and stars in each item */
+    .shop-items .item .bet {
+        margin: 0.4rem 0;
+    }
+    
+    .shop-items .item .num, .shop-items .item .star {
+        width: 2rem; text-align: center;
+        background-color: #ddd;
+    }
+    
+    .shop-items .item .star {
+        background-color: #dd9;
+    }
+
+/* sections in each item */
+    .shop-items .item>.product { width: 12rem; }
+    
+    .shop-items .item>.price { width: 6rem; }
+    
+    .shop-items .item>.remove { width: 3rem; padding: 0; }
+    
+    .shop-items .item>.remove .button {
+        background-color: transparent;
+        border: 0;
+        cursor: pointer;
+        width: 3rem;
+        height: 3rem;
+        padding: 0;
+        margin-bottom: 1px;
+    }
+    
+    .shop-items .item>.remove .button:hover { background-color: #eee; }
+    .shop-items .item>.remove .button:active { background-color: #ddd; }
+    
+    .shop-items .item>.remove .button img { border: 0; width: 2rem; height: 2rem; }
+
+/* height of the last row */
+    .shop-items .foot { line-height: 5rem; }
+
+/* checkout button */
+    .checkout {
+        padding: 0.5rem 1rem;
+        border-radius: 0.4rem;
+        font-weight: bold;
+        font-size: 1.2rem;
+        background-color: #55688A;
+        color: white;
+        border: 1px solid transparent;
+        cursor: pointer;
+        
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+    	-moz-user-select: none;
+    	-o-user-select: none;
+    	user-select: none;
+    }
+    
+    .checkout:hover {
+        background-color: #42516C;
+    }
+    
+    .checkout:active {
+        background-color: #55688A;
+    }
+
+/* info when is a view of an order */
+    .order-done {
+        padding: 1rem; font-size: 1.5rem; background: lightsteelblue; color: black;
+    }

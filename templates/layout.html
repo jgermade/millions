@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Million$</title>
+
+	<link rel="stylesheet" type="text/css" href="${base-url}lib/millions.css"/>
+	<link rel="stylesheet" type="text/css" href="${base-url}lib/${view-name}.css"/>
+	
+	<script type="text/javascript" src="lib/millions.js"></script>
+</head>
+<body id="view" class="${view-name}" data-shop-items="${shop-items}" data-base-url="${base-url}">
+    <header class="responsive-container">
+        <nav id="header-menu">
+            <a href="${base-url}shopping-cart" class="link shopping-cart float-right"><span id="shopping-cart-num" class="value">${shop-items}</span></a>
+            <a href="${base-url}" class="logo">Million<span class="dollar">$</span></a>
+            <a href="${base-url}euromillions" class="link euromillions">Euromillions</a>
+        </nav>
+    </header>
+    <section id="main" class="responsive-container">${view}</section>
+    <footer></footer>
+</body>
+</html>

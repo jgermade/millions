@@ -1,0 +1,175 @@
+/*******************************
+ *  common css for all views
+ ******************************/
+
+    html { font-size: 0.16in; }
+    
+    html, body {
+        margin: 0; padding: 0; width: 100%; height: 100%;
+        font-family: Arial, helvetica, sans-serif;
+        text-align: center;
+    }
+    
+    #main {
+        padding: 1rem;
+    }
+    
+    table.table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+    
+    table.table thead { font-weight: bold; }
+    
+    table.table th, table.table td { padding: 0 0.5rem; height: 2rem; }
+    
+    table.table thead th { border-bottom: 1px solid #444; }
+    
+    table.table tbody {  }
+
+    /* useful classes */
+    
+        .text-left { text-align: left; }
+        .text-center { text-align: center; }
+        .text-right { text-align: right; }
+        
+        .float-right { float: right; }
+        .float-left { float: left; }
+        
+        .margin-0-15 { margin: 0 15%; }
+
+/* responsive container for a liquid layout */
+    .responsive-container {
+        position: relative; display: inline-block;
+        width: 70%; max-width: 12in; min-width: 8in;
+        text-align: left;
+    }
+    
+    @media screen and (max-width: 8in) {
+        html { font-size: 0.15in; }
+        .responsive-container { min-width: 0; width: 100%; max-width: 6in; }
+        .columns-responsive { display: block; text-align: center; }
+        .columns-responsive [class*=column-] { display: inline-block; width: auto; text-align: left; }
+    }
+    @media screen and (min-width: 16in) { html { font-size: 0.17in; } }
+    @media screen and (min-width: 21in) { html { font-size: 0.18in; } }
+
+/* fixing sizes */
+    * { box-sizing: border-box; }
+
+    #header-menu { padding: 1rem; white-space: nowrap; }
+    
+    /* any link in header */
+    #header-menu a {
+        display: inline-block; text-decoration: none;
+    }
+
+    /* links in header */
+    #header-menu .logo {
+        color: black; font-size: 2rem;
+        -webkit-transform: rotate(-5deg);
+        -moz-transform: rotate(-5deg);
+        -ms-transform: rotate(-5deg);
+        -o-transform: rotate(-5deg);
+        transform: rotate(-5deg);
+        
+        -webkit-transition: all 0.25s;
+        -moz-transition: all 0.25s;
+        -ms-transition: all 0.25s;
+        -o-transition: all 0.25s;
+        transition: all 0.25s;
+    }
+    
+    #header-menu .logo:hover {
+        -moz-transform: scale(1.05) rotate(-5deg);
+        -webkit-transform: scale(1.05) rotate(-5deg);
+        -ms-transform: scale(1.05) rotate(-5deg);
+        -o-transform: scale(1.05) rotate(-5deg);
+        transform: scale(1.05) rotate(-5deg);
+        filter: progid:DXImageTransform.Microsoft.Matrix(sizingMethod='auto expand', M11=1.05, M12=-0, M21=0, M22=1.05);
+    }
+    
+    #header-menu .logo .dollar { color: #1E7709; }
+    
+    #header-menu .link {
+        padding: 0.5rem 1rem; margin-left: 2rem;
+        border-radius: 0.4rem;
+        font-weight: bold;
+        font-size: 1.2rem;
+        color: #55688A;
+        margin-top: 0.5rem;
+        border: 1px solid transparent;
+    }
+    #header-menu .link:hover { background-color: #f8f8f8; border-color: #BDC6D6; }
+    #header-menu .link:active { background-color: #eee; }
+    
+    #header-menu .link.shopping-cart { border-color: #55688A; line-height: 1.55rem; }
+
+    /* when adding to shopping cart */
+        html.shopping #header-menu .link.shopping-cart .value { visibility: hidden; }
+        html.shopping #header-menu .link.shopping-cart {
+            background-image: url('../assets/img/loading32.gif');
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: 1.6rem 1.6rem;
+        }
+
+    
+    /* when euromillions is current view */
+        #view.euromillions #header-menu .link.euromillions, #view.shopping-cart #header-menu .shopping-cart {
+            background-color: #55688A; color: white;
+        }
+
+    /* form options*/
+        #options {
+            display: table; width: 100%;
+        }
+        
+        #options>div {
+            display: table-cell; padding: 1rem; height: 5rem;
+            vertical-align: middle;
+        }
+
+        #price { font-size: 1.5rem; color: #55688A; }
+        
+        #price>.value { font-size: 2rem; color: #222; }
+        
+        #options>.play .submit {
+            font-size: 1.5rem;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            background-color: #DA5753;
+            border: 1px solid #8F221E;
+            color: white;
+            text-shadow: 1px 1px 1px #8F221E, -1px 1px 1px #8F221E, 1px -1px 1px #8F221E, -1px -1px 1px #8F221E;
+            box-shadow: 0 0 0.6rem rgba(0,0,0,0.3);
+            
+            -webkit-transition: all 0.25s;
+            -moz-transition: all 0.25s;
+            -ms-transition: all 0.25s;
+            -o-transition: all 0.25s;
+            transition: all 0.25s;
+        }
+        
+        html.shopping #options>.play .submit { opacity: 0.5; cursor: wait; }
+
+        #options>.play .submit:hover {
+            -moz-transform: scale(1.1);
+            -webkit-transform: scale(1.1);
+            -ms-transform: scale(1.1);
+            -o-transform: scale(1.1);
+            transform: scale(1.1);
+            filter: progid:DXImageTransform.Microsoft.Matrix(sizingMethod='auto expand', M11=1.1, M12=-0, M21=0, M22=1.1);
+        }
+        
+        #options>.play .submit:active {
+            -moz-transform: scale(1.05);
+            -webkit-transform: scale(1.05);
+            -ms-transform: scale(1.05);
+            -o-transform: scale(1.05);
+            transform: scale(1.05);
+            filter: progid:DXImageTransform.Microsoft.Matrix(sizingMethod='auto expand', M11=1.05, M12=-0, M21=0, M22=1.05);
+        }
+
+    
+    

@@ -1,0 +1,133 @@
+<div id="welcome">
+    <h1 class="text-center">Little implementation of an Euromillions page</h1>
+    <h3 class="text-center">Using codeIgniter</h3>
+    <br/>
+    
+    <div id="files-list" class="margin-0-15">
+        <h3>List of modified / added files:</h3>
+        <ul>
+            <li>
+                <div>application</div>
+                <ul>
+                    <li>
+                        <div>config</div>
+                        <ul>
+                            <li>
+                                <div>config.php</div>
+                                <code class="inline-block">$config['base_url']	= 'millions';</code>
+                            </li>
+                            <li>
+                                <div>database.php</div>
+                                <code class="inline-block">$db['default']['username'] = 'millions';<br/>$db['default']['password'] = 'millions';<br/>$db['default']['database'] = 'millions';</code>
+                            </li>
+                            <li>
+                                <div>routes.php</div>
+                                <code class="inline-block">$route['default_controller'] = "welcome";<br/>$route['euromillions'] = "euromillions";<br/>$route['shopping-cart'] = "shopping_cart";<br/>$route['shopping-cart.json'] = "shopping_cart_json";<br/>$route['order/:num'] = "order";<br/>$route['order.json'] = "order_json";</code>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <div>controllers</div>
+                        <ul>
+                            <li>welcome.php&nbsp;&nbsp;<code>{base-url}/ (<a href="${base-url}">this view</a>)</code></li>
+                            <li>euromillions.php&nbsp;&nbsp;<code>{base-url}<a href="${base-url}euromillions">/euromillions</a></code></li>
+                            <li>order.php&nbsp;&nbsp;<code>{base-url}<a href="${base-url}order/1">/order/:num</a></code></li>
+                            <li>order_json.php&nbsp;&nbsp;<code>{base-url}/order.json (ajax)</code></li>
+                            <li>shopping_cart.php&nbsp;&nbsp;<code>{base-url}<a href="${base-url}shopping-cart">/shopping-cart</a></code></li>
+                            <li>shopping_cart_json.php&nbsp;&nbsp;<code>{base-url}/shopping-cart.json (ajax)</code></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <div>model</div>
+                        <ul>
+                            <li>
+                                <div>orders_model.php</div>
+                                <code class="inline-block">methods:<br/>&nbsp;->create_table()<br/>&nbsp;->insert()<br/>&nbsp;->get()</code>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <div>views</div>
+                        <ul>
+                            <li>welcome.php&nbsp;&nbsp;<code>{base-url}/ (<a href="${base-url}">this view</a>)</code></li>
+                            <li>euromillions.php&nbsp;&nbsp;<code>{base-url}<a href="${base-url}euromillions">/euromillions</a></code></li>
+                            <li>order.php&nbsp;&nbsp;<code>{base-url}<a href="${base-url}order/1">/order/:num</a></code></li>
+                            <li>shopping_cart.php&nbsp;&nbsp;<code>{base-url}<a href="${base-url}shopping-cart">/shopping-cart</a></code></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            
+            <li>
+                <div>assets</div>
+                <ul>
+                    <li>
+                        <div>img</div>
+                        <ul>
+                            <li><a href="${base-url}assets/img/bin.png" target="_new">bin.png</a></li>
+                            <li><a href="${base-url}assets/img/loading32.gif" target="_new">loading32.gif</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            
+            <li>
+                <div>lib</div>
+                <ul>
+                    <code class="block">common libs</code>
+                    <li><a href="${base-url}lib/millions.css" target="_new">millions.css</a></li>
+                    <li><a href="${base-url}lib/millions.js" target="_new">millions.js</a></li>
+                    <br/>
+                    
+                    <code class="block">euromillions view libs</code>
+                    <li><a href="${base-url}lib/euromillions.css" target="_new">euromillions.css</a></li>
+                    <li><a href="${base-url}lib/euromillions.js" target="_new">euromillions.js</a></li>
+                    <br/>
+                    
+                    <code class="block">shopping-cart view libs</code>
+                    <li><a href="${base-url}lib/shopping-cart.css" target="_new">shopping-cart.css</a></li>
+                    <li><a href="${base-url}lib/shopping-cart.js" target="_new">shopping-cart.js</a></li>
+                    <br/>
+                    
+                    <li><a href="${base-url}lib/welcome.css" target="_new">welcome.css</a></li>
+                </ul>
+            </li>
+            
+            <li>
+                <div>templates</div>
+                <ul>
+                    <li><a href="${base-url}templates/layout.html" target="_new">layout.html</a>&nbsp;<code>common layout for all views</code></li>
+                    <li><a href="${base-url}templates/welcome.html" target="_new">welcome.html</a>&nbsp;<code>this text</code></li>
+                    <li>
+                        <a href="${base-url}templates/euromillions.html" target="_new">euromillions.html</a>&nbsp;<code>layout for euromillions</code>
+                        <ul>
+                            <li>euromillions/<a href="${base-url}templates/euromillions/card.html" target="_new">card.html</a>&nbsp;<code>template for each card in euromillions</code></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="${base-url}templates/shopping-cart.html" target="_new">shopping-cart.html</a>&nbsp;<code>layout for shopping-cart</code>
+                        <ul>
+                            <li>shopping-cart/<a href="${base-url}templates/shopping-cart/empty.html" target="_new">empty.html</a>&nbsp;<code>layout for empty shopping cart</code></li>
+                            <li>shopping-cart/<a href="${base-url}templates/shopping-cart/item.html" target="_new">item.html</a>&nbsp;<code>template for each item in shopping cart</code></li>
+                            <li>shopping-cart/<a href="${base-url}templates/shopping-cart/item-bet.html" target="_new">item-bet.html</a>&nbsp;<code>template for each bet in item</code></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="${base-url}templates/order.html" target="_new">order.html</a>&nbsp;<code>layout for order</code>
+                        <ul>
+                            <li>order/<a href="${base-url}templates/order/none.html" target="_new">none.html</a>&nbsp;<code>layout for incorrect order</code></li>
+                            <li>order/<a href="${base-url}templates/order/item.html" target="_new">item.html</a>&nbsp;<code>template for each item in order</code></li>
+                            <li>order/<a href="${base-url}templates/order/item-bet.html" target="_new">item-bet.html</a>&nbsp;<code>template for each bet in item</code></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            
+            <li>
+                <div>tools.php</div>
+                <code class="inline-block">this php files provides functions template() and replaceKeys() developed for handle templates</code>
+            </li>
+            
+        </ul>
+    </div>
+</div>
