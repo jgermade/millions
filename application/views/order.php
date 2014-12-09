@@ -44,4 +44,3 @@
                 ]) : template("order/none") ),
             "shop-items" => count($shop_items)
         ]);
-?>

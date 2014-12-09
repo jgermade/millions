@@ -1,4 +1,4 @@
-<?
+<?php
 	require(getcwd()."/tools.php");
 	
 	// each card drawn with the same template
@@ -20,4 +20,3 @@
     	    "view" => $view,
     	    "shop-items" => count($shop_items)
         ]);
-?>

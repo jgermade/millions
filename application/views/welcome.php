@@ -1,4 +1,4 @@
-<?
+<?php
 	require(getcwd()."/tools.php");
 	
 	$base_url = "/".$this->config->base_url();
@@ -10,4 +10,3 @@
     	    "view" => template("welcome",[ "base-url" => $base_url ]),
     	    "shop-items" => count($shop_items)
         ]);
-?>

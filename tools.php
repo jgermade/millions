@@ -1,4 +1,4 @@
-<?
+<?php
     function replaceKeys($str,$keys){
         return preg_replace_callback("/\\\${([\\-\\w\\.]+)}/",function($coincidencias) use ($keys) {
             if( isset($coincidencias[1]) ) {
@@ -23,5 +23,3 @@
         if( is_array($keys) ) return replaceKeys(file_get_contents(getcwd()."/templates/$name.html"),$keys);
         else return file_get_contents(getcwd()."/templates/$name.html");
     }
-
-?>
